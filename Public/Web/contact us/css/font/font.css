@@ -1,0 +1,38 @@
+@font-face{
+    font-family: "PingFang Regular";               /*自定义字体名称*/
+    src: url("../font/NotoSansHans-Light.otf");   /*IE9兼容模式*/
+
+url("../css/font/NotoSansHans-Light.otf") format("truetype"),;     /*Safari,Android,iOS*/;
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: "PingFang Light";               /*自定义字体名称*/
+    src: url("../font/NotoSansHans-Light.otf");   /*IE9兼容模式*/
+
+url("../css/font/NotoSansHans-Light.otf") format("truetype"),;     /*Safari,Android,iOS*/;
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: "AvenirNextLTPro-Bold";               /*自定义字体名称*/
+    src: url("../font/AvenirNextLTPro-Bold.otf");   /*IE9兼容模式*/
+url("../contact us/css/font/AvenirNextLTPro-Bold.otf") format("truetype"),;     /*Safari,Android,iOS*/;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: "AvenirLTStd-Light";               /*自定义字体名称*/
+    src: url("../font/AvenirLTStd-Light.otf");   /*IE9兼容模式*/
+url("../css/font/AvenirLTStd-Light.otf") format("truetype"),;     /*Safari,Android,iOS*/;
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: "FZLTHK--GBK1-0";               /*自定义字体名称*/
+    src: url("../font/FZLTHK--GBK1-0.TTF");   /*IE9兼容模式*/
+url("../css/font/FZLTHK--GBK1-0.otf") format("truetype"),;     /*Safari,Android,iOS*/;
+    font-weight: normal;
+    font-style: normal;
+}

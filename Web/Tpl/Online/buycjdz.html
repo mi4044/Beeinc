@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>场景定制服务购买-蜜蜂科技</title>
+    <meta name="viewport" content="user-scalable=no,width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="__ROOT__/Public/Web/images/logo.ico" type="image/x-icon" />
+    <link href="__ROOT__/Public/Web/contact%20us/css/bootstrap.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/hallooou.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/color_main.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/Define..css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/font/font.css" rel="stylesheet">
+    <link rel="stylesheet" href="__ROOT__/Public/Web/Customized/css/Customized.css" />
+    <link href="__ROOT__/Public/Web/index/css/animate.css" rel="stylesheet">
+    <script type="text/javascript" src="__ROOT__/Public/Web/contact%20us/js/jquery-1.11.3.js" ></script>
+    <script type="text/javascript" src="__ROOT__/Public/Web/contact%20us/js/main.js" ></script>
+    <style>
+        .slideBox{margin-top: 60px}
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $(':checkbox[name=flag]').click(function(){
+                $(this).parent().parent().find('input:checkbox[value!="'+$(this).val()+'"]').removeAttr('checked')
+                });
+        });
+		function space(Id){
+			var d='#'+Id;
+			var stylename=$(d).val();
+			$.post('__URL__/getcustomizeprice',{'style':stylename},function(data)
+            {
+				$.each(JSON.parse(data), function(idx, obj) {
+					var s='#'+obj.space;
+					$(s).val(obj.price);
+				});
+			})
+		}
+		function price(spName){
+			var n='#'+spName;
+			var m=$('#money').html();
+			var price=$(n).val();
+			var money=m*1+price*1
+			$('#money').html(money);
+			//alert(money);
+		}
+    </script>
+</head>
+<body id="home">
+<nav class="navbar navbar-custom navbar-fixed-top " style="border-width: 0 0 30px" role="navigation">
+    <div class="navbar-header pull-left">
+        <a class="navbar-brand page-scroll" href="__APP__"><img class="logo_img"  src="__ROOT__/Public/Web/index/images/logo.png"></a>
+    </div>
+    <ul class="nav navbar-nav font_nav visible-lg">
+        <!-- row_nav.html start -->
+		<include file='Public:row_nav' />
+		<!-- row_nav.html end -->
+    </ul>
+    <div class="Administrato">
+        <p>用户数</p>
+        <span id="team"><?php echo $num;?></span>
+    </div>
+    <div class=" pull-right">
+        <div class="button_container toggle">
+            <span class="top"></span><span class="middle"></span><span class="bottom"></span>
+        </div>
+    </div>
+    <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+            <ul>
+                <!-- column_nav.html start -->
+				<include file='Public:column_nav' />
+				<!-- column_nav.html end -->
+            </ul>
+        </nav>
+    </div>
+</nav>
+<div class="Customized_conter">
+<div class="container">
+    <div class="shop_title">购买VR全景场景定制服务</div>
+    <div style="margin-left: 17%">
+        <div class="upload">
+            <input  type="button"  value="上传户型图活参考图片"/>
+        </div>
+    </div>
+</div>
+<div style="width: 96%;margin-left: 1.8%;">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="slideBox">
+                    <img src="__ROOT__/Public/Web/contact%20us/images/购买定制服务_03.png" alt=""/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="slideBox">
+                   <img src="__ROOT__/Public/Web/contact%20us/images/购买定制服务_03.png" alt=""/>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="slideBox">
+                    <img src="__ROOT__/Public/Web/contact%20us/images/购买定制服务_03.png" alt=""/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="shop_form">
+        <form id="thisForm" class="messages">
+            <div class="messlist">
+                <label>风格：</label>
+                <div class="Customized_1">
+					<volist name="style" id="vo" key="k">
+                    <div>
+						<if condition="$vo.style eq '欧式'">
+                        <input  name="flag" style="width: 50px" onclick="space({$k})" type="checkbox" value="{$vo['style']}" id="{$k}" class="chk_1" checked="checked">
+                        <label style="width: 20px;height: 20px;margin-top: 4px" for="{$k}"></label>
+                        <span style="float: left;text-indent: 0.5em">{$vo['style']}</span>
+						<else />
+						<input  name="flag" style="width: 50px" onclick="space({$k})" type="checkbox" value="{$vo['style']}" onclick="space({$k})" id="{$k}" class="chk_1">
+                        <label style="width: 20px;height: 20px;margin-top: 4px" for="{$k}"></label>
+                        <span style="float: left;text-indent: 0.5em">{$vo['style']}</span>
+						</if>
+                    </div>
+					</volist>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="messlist">
+                <label>空间：</label>
+                <div class="Customized_1">
+					<volist name="space" id="vo" key="k">
+                    <div>
+                        <input name="space" type="checkbox" id="{$k+20}" value="{$vo['space']}" class="chk_1">
+                        <label style="width: 20px;height: 20px;margin-top: 4px" for="{$k+20}" onclick='price("{$vo['space']}")'>
+							<input type="hidden" id="{$vo['space']}" value="{$vo['price']}">
+						</label>
+                        <span style="float: left;text-indent: 0.5em">{$vo['space']}</span>
+                    </div>
+					</volist>
+                </div>
+            </div>
+            <div class="messlist">
+                <label>姓名</label>
+                <div class="kao">
+                    <input class="stext" type='text' name="Name"  placeholder="请输入您的名字" id="Name" value="" />
+                    <span class="tipinfo"></span>
+                </div>
+                <div class="clears"></div>
+            </div>
+            <div class="messlist">
+                <label>电话</label>
+                <div class="kao">
+                    <input class="stext" type='text' name="sms"placeholder="请输入您的姓名 请输入您的电话，我们会将石全石美的激活码发送至您的手机" id="sms" value="" />
+                    <span class="tipinfo"></span>
+                </div>
+                <div class="clears"></div>
+            </div>
+            <div class="messlist">
+                <label>公司</label>
+                <div class="kao">
+                    <input class="stext" type='text' name="corpName"  placeholder="请输入您的公司名称，便于对贵公司的售后服务" id="corpName" value="" />
+                    <span class="tipinfo"></span>
+                </div>
+                <div class="clears"></div>
+            </div>
+            <div class="messlist">
+                <label>地址</label>
+                <div class="kao">
+                    <input class="stext" type='text' name="address"  placeholder="请输入您的公司地址，便于对贵公司的售后服务" id="address" value="">
+                    <span class="tipinfo"></span>
+                </div>
+                <div class="clears"></div>
+            </div>
+            <div class="messlist">
+                <label>金额</label>
+                <span id="money"></span>
+                <div class="clears"></div>
+            </div>
+            <div class="messsub">
+                <input onclick="login()" id="aa"  type="button"  value="确认信息并支付"/>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<!-- footer.html start -->
+<include file='Public:footer' />
+<!-- footer.html end -->
+</body>
+<script type="text/javascript" src="__ROOT__/Public/Web/contact%20us/js/TouchSlide.1.1.js" ></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/bootstrap.min.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/hallooou.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/jquery.smoove.js"></script>
+<script>
+    $('.block').smoove({offset:'40%'});
+	//监控风格，风格至少要选中一项
+	$('input:checkbox[name="flag"]').change(function(){
+		var length=$('input:checkbox[name="flag"]:checked').length;
+		if(length!=1){
+			alert('风格至少要选中一项');
+			console.debug($(this).attr('checked','checked'));;
+			return false;
+			
+		}	
+	});
+	//监控空间取消或者选中某个时，计算当前选中项
+	$('input:checkbox[name="space"]').change(function(){
+	console.debug($('input:checkbox[name="space"]:checked'));
+	});
+</script>
+</html>

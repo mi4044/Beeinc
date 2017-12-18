@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+    <title>登录-蜜蜂科技</title>
+	<link rel="shortcut icon" href="__ROOT__/Public/Web/images/logo.ico" type="image/x-icon" />
+    <link href="__ROOT__/Public/Web/contact%20us/css/bootstrap.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/hallooou.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/color_main.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/Define..css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/font/font.css" rel="stylesheet">
+    <link rel="stylesheet" href="__ROOT__/Public/Web/contact%20us/css/cp.css" />
+    <link href="__ROOT__/Public/Web/index/css/animate.css" rel="stylesheet">
+	<link href="__ROOT__/Public/Web/contact%20us/css/layer.css" rel="stylesheet">
+	
+	<script src="__ROOT__/Public/Web/contact%20us/js/jquery.min.js"></script>
+	<script src="__ROOT__/Public/Web/contact%20us/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            initValidator();
+        });
+        function login(){
+            var uName=$('#userName').val();
+            var uPwd=$('#passWord').val();
+            $.post('__URL__/login',{'username':uName,'password':uPwd},function(data)
+            {
+                data=eval("("+data+")");
+				if(data.status==1){
+					layer.msg(data.msg);       
+				}else if(data.status == 2){
+					layer.msg(data.msg); 
+				}else if(data.status==3){     
+					if(data.redirect_url){
+						var path=data.redirect_url;
+					}else{
+						var path="{:U('personalcenter/index')}";
+					}
+					window.location.href=path;         
+				}			
+            })
+        }
+    </script>
+    <style type="text/css">
+        .tipinfo font.error{color:#eb0000;width:300px;display:block;}
+        .form-control,
+        .input-group {
+            height: 40px;
+            width: 100%;
+        }
+        .sign div{margin-top: 7%}
+        .form-group div p{margin-top: 20%}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-custom navbar-fixed-top " style="border-width: 0 0 30px" role="navigation">
+    <div class="navbar-header pull-left">
+        <a class="navbar-brand page-scroll" href="__APP__"><img class="logo_img"  src="__ROOT__/Public/Web/index/images/logo.png"></a>
+    </div>
+    <ul class="nav navbar-nav font_nav visible-lg">
+        <!-- row_nav.html start -->
+		<include file='Public:row_nav' />
+		<!-- row_nav.html end -->
+    </ul>
+    <div class="Administrato">
+        <p>用户数</p>
+        <span id="team"><?php echo $num;?></span>
+    </div>
+    <div class=" pull-right">
+        <div class="button_container toggle">
+            <span class="top"></span><span class="middle"></span><span class="bottom"></span>
+        </div>
+    </div>
+    <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+            <ul>
+                <!-- column_nav.html start -->
+				<include file='Public:column_nav' />
+				<!-- column_nav.html end -->
+            </ul>
+        </nav>
+    </div>
+</nav>
+<div class="container-fluid" style="margin-top: 5%">
+    <div class="col-md-5" style="margin-top: 5%">
+        <div class="form">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+                <form id="thisForm" method="post" action="">
+                    <div class="col-md-12">
+                        <div>
+                            <input class="form-control"type='text' name="userName" id="userName" value="" placeholder="用户名"/>
+                            <div class="tipinfo"></div>
+                        </div>
+                    </div>
+                    <div class="sign">
+                        <div class="col-md-12">
+                            <input class="form-control" type="password" name="passWord" id="passWord" value="" placeholder="密码"/>
+                            <div class="tipinfo"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group form-actions">
+                        <div class="col-md-12 ">
+                            <button onClick="login()" type="button" class="btn btn-sm btn-info" style="background-color: #00cccc">登录</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-12 link">
+                            <a href="__APP__/public/forgetpwd" ><p class="remove-margin"><small style="color:rgba(0, 0, 0, 0.36);">忘记密码？</small></p> </a>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <div style="float:left;margin-left: 10%"><img style="width: 100%;float: left" src="__ROOT__/Public/Web/sign%20in/D_1.png" alt=""/></div>
+    </div>
+</div>
+<div style="height: 100px"></div>
+<!-- footer.html start -->
+<include file='Public:footer' />
+<!-- footer.html end -->
+</body>
+<script src="__ROOT__/Public/Web/contact%20us/js/hallooou.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/layer.js"></script>
+</html>

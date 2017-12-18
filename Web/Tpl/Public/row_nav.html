@@ -1,0 +1,13 @@
+<!------ 横向导航栏 ------>
+<?php 
+if(empty($_SESSION["userid"]))
+{
+	echo '<li><a href="__APP__/public/login" class="button">登录</a></li>';	
+}else
+{
+	echo '<li><a href="__APP__/personalcenter/index" class="button">个人中心</a></li>';
+}
+?>
+<li><a href="__APP__/recharge/index" class="button">充值</a></li>
+<li><a href="__APP__/about/cooperation" class="button">合作企业</a></li>
+<li><a href="__APP__/online/index" class="button">在线购买</a></li>

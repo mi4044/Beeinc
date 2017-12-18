@@ -1,0 +1,98 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>视频教学-蜜蜂科技</title>
+<link rel="shortcut icon" href="__ROOT__/Public/Web/images/logo.ico" type="image/x-icon" />
+<link href="__ROOT__/Public/Web/contact%20us/css/bootstrap.min.css" rel="stylesheet">
+<link href="__ROOT__/Public/Web/contact%20us/css/hallooou.css" rel="stylesheet">
+<link href="__ROOT__/Public/Web/contact%20us/css/color_main.css" rel="stylesheet">
+<link href="__ROOT__/Public/Web/contact%20us/css/contact.css" rel="stylesheet">
+<link rel="stylesheet" href="__ROOT__/Public/Web/Define/css/Define..css" />
+<link href="__ROOT__/Public/Web/index/css/animate.css" rel="stylesheet">
+<link href="__ROOT__/Public/Web/contact%20us/css/font/font.css" rel="stylesheet">
+    <style>
+        .nav_food{float: left;margin-left: 4%;margin-top: 2%}
+        .nav_food ul li a{color: #ffffff}
+        .nav_food ul li{margin-top: 10px}
+    </style>
+<script type="text/javascript">
+$(document).ready(function(){
+    function anim(duration){
+        $('#mint').animate(
+            {height: 'toggle'},
+            {duration: duration}
+        );
+    }
+    $('#closebtn').click(function() {
+        $('#mintbar').slideUp();
+        anim(600);
+    });
+
+    $('#mint').click(function() {
+        anim(600);
+        $('#mintbar').slideDown('slow');
+    });
+
+});
+</script>
+
+</head>
+
+<body>
+<div style="width: 100%;height: 120px">
+    <nav class="navbar navbar-custom navbar-fixed-top " style="border-width: 0 0 30px" role="navigation">
+        <div class="navbar-header pull-left">
+            <a class="navbar-brand page-scroll" href="__APP__"><img class="logo_img"  src="__ROOT__/Public/Web/index/images/logo.png"></a>
+        </div>
+        <ul class="nav navbar-nav font_nav visible-lg">
+            <!-- row_nav.html start -->
+			<include file='Public:row_nav' />
+			<!-- row_nav.html end -->
+        </ul>
+        <div class="Administrato">
+            <p>用户数</p>
+            <span id="team"><?php echo $num;?></span>
+        </div>
+        <div class=" pull-right">
+            <div class="button_container toggle">
+                <span class="top"></span><span class="middle"></span><span class="bottom"></span>
+            </div>
+        </div>
+        <div class="overlay" id="overlay">
+            <nav class="overlay-menu">
+                <ul>
+                    <!-- column_nav.html start -->
+					<include file='Public:column_nav' />
+					<!-- column_nav.html end -->
+                </ul>
+            </nav>
+        </div>
+    </nav>
+<br>
+<div style="width: 87%;margin: 0 auto;">
+    <ol class="breadcrumb">
+        <li><a href="__APP__/Help/videolist">视频教学</a></li>
+        <li class="active">观看视频</li>
+    </ol>
+</div>
+<div class="container">
+    <h3 style="text-align: center;font-family: 'PingFang Light';font-size: 2em">{$video['title']}</h3>
+    <div id="videobox" style="margin-left: -5%;text-align: center" >
+        <video style="width:800px;" controls="controls" autoplay="autoplay"  poster="__ROOT__/Public/Web/video/images/video.png">
+            <source src="{$video['video']}" type="video/mp4" />
+        </video>
+    </div>
+    <div class="font_p">
+        <p style="margin-top: 20px"><a href="__APP__/help/videolist" style="color:#00cac8;">查看全部教学视频 ></a></p>
+    </div>
+</div>
+<!-- footer.html start -->
+<include file='Public:footer' />
+<!-- footer.html end -->  
+</div>
+</body>
+<script src="__ROOT__/Public/Web/contact%20us/js/jquery.min.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/bootstrap.min.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/hallooou.js"></script>
+</html>

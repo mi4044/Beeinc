@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>充值-蜜蜂科技</title>
+    <link href="__ROOT__/Public/Web/contact%20us/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/hallooou.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/color_main.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/contact.css" rel="stylesheet">
+    <link rel="stylesheet" href="__ROOT__/Public/Web/contact%20us/css/Define..css" />
+    <link href="__ROOT__/Public/Web/index/css/animate.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/font/font.css" rel="stylesheet">
+    <script type="text/javascript">
+        window.onload = function() {
+            //
+            var max = 1000000,
+                    o = document.getElementById('team');
+            var chrome = /chrome/i.test(navigator.userAgent);
+
+            // 获取保存的数据
+            if(chrome) {
+                data_num = sessionStorage.getItem("num") || "";
+            }
+            var num_now = parseInt(data_num) || 50000;
+
+            o.innerHTML = num_now + 1;
+
+            // 每 0.1 秒更新一次数字，并保存数据
+            setInterval(function() {
+                num_now = num_now >= max ? 1 : num_now + 1;
+                o.innerHTML = num_now;
+                if(chrome) {
+                    sessionStorage.setItem("num", num_now);
+                }
+                else {
+                    document.cookie = "num=" + num_now + ";path=/;";
+                }
+            }, 18000);
+        };
+    </script>
+</head>
+<body id="home">
+<nav class="navbar navbar-custom navbar-fixed-top " style="border-width: 0 0 30px" role="navigation">
+    <div class="navbar-header pull-left">
+        <a class="navbar-brand page-scroll" href="__APP__"><img class="logo_img"  src="__ROOT__/Public/Web/index/images/logo.png"></a>
+    </div>
+    <ul class="nav navbar-nav font_nav visible-lg">
+        <!-- row_nav.html start -->
+		<include file='Public:row_nav' />
+		<!-- row_nav.html end -->
+    </ul>
+    <div class="Administrato">
+        <p>用户数</p>
+        <span><?php echo $num;?></span>
+    </div>
+    <div class=" pull-right">
+        <div class="button_container toggle">
+            <span class="top"></span><span class="middle"></span><span class="bottom"></span>
+        </div>
+    </div>
+    <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+            <ul>
+                <!-- column_nav.html start -->
+				<include file='Public:column_nav' />
+				<!-- column_nav.html end -->
+            </ul>
+        </nav>
+    </div>
+</nav>
+<div id="slideBox" class="slideBox">
+    <div class="bd">
+        <a class="pic" href="javascript:void(0);"><img src="__ROOT__/Public/Web/Define/images/充值-2_02.png" /></a>
+    </div>
+</div>
+<div class="container-fluid">
+    <div style="background-color: #FFFFFF;height: 570px">
+        <div style="margin-top: 5%;margin-left: 40%;font-family: 'PingFang Light';font-size: 18px">
+            <div class="login-input">
+                <label><span style="color: #00bbb9">当前金额</span>：  &nbsp;&nbsp;&nbsp;{$data['balance']}</label>
+            </div>
+            <div class="login-input" style="margin-top: 2%">
+                <label><span style="color: #00bbb9">充值金额</span>：  &nbsp;&nbsp;</label>
+                <input type="text"  style="width: 380px" class="list-input"/>
+            </div>
+            <div class="login-input" style="margin-top: 5%">
+                <button type="button"  class="btn btn-sm btn-info" style="background-color: #00cccc;width:34%;margin-left: 108px">立即充值</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer.html start -->
+<include file='Public:footer' />
+<!-- footer.html end -->
+<script src="__ROOT__/Public/Web/contact%20us/js/jquery.min.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/bootstrap.min.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/hallooou.js"></script>
+<script type="text/javascript" src="__ROOT__/Public/Web/Define/js/main.js" ></script>
+<script type="text/javascript" src="__ROOT__/Public/Web/Define/js/TouchSlide.1.1.js" ></script>
+<script>
+    $(".text-center").find("div:eq(1)")
+</script>
+</body>
+</html>

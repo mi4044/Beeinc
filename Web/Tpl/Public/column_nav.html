@@ -1,0 +1,31 @@
+<!------ 纵向导航栏 ------>
+<li><a href="__APP__/index/index">首页</a></li>
+<li><a href="__APP__/product/index">产品商城</a></li>
+<li><a href="__APP__/zhaoshang/index">招商加盟</a></li>
+<li><a href="__APP__/news/index">新闻动态</a></li>
+<li><a href="__APP__/about/index">关于我们</a></li>
+<li><a href="__APP__/help/index">客户帮助</a></li>
+<li><a href="__APP__/servicenet/index">服务网点</a></li>
+<li><a href="http://www.tcatc.cn/" target="_blank">天材资讯</a></li>
+<li>
+	<div class="nav_tu">
+		<ul>
+			<?php 
+				if(empty($_SESSION["userid"]))
+				{
+					echo '<li><a href="__APP__/public/login" class="button">登录</a></li>';	
+				}else
+				{
+					echo '<li><a href="__APP__/personalcenter/index" class="button">个人中心</a></li>';
+				}
+			?>
+			<li><a href="__APP__/Recharge/index" class="button">充值</a></li>
+			<li><a href="__APP__/about/cooperation" class="button">合作企业</a></li>
+			<li><a href="__APP__/online/index" class="button">在线购买</a></li>
+		</ul>
+	</div>
+</li>
+
+
+
+

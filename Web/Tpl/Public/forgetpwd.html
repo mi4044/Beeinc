@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0" />
+    <title>忘记密码-蜜蜂科技</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="shortcut icon" href="__ROOT__/Public/Web/images/logo.ico" type="image/x-icon" />
+    <link href="__ROOT__/Public/Web/contact%20us/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/hallooou.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/color_main.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/contact.css" rel="stylesheet">
+	<link href="__ROOT__/Public/Web/contact%20us/css/Define..css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/index/css/animate.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/font/font.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="__ROOT__/Public/Web/Retrieve password/css/register.css" />
+    <script type="text/javascript" src="__ROOT__/Public/Web/Retrieve password/js/jquery-1.8.3-min.js"></script>
+    <script type="text/javascript" src="__ROOT__/Public/Web/Retrieve password/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="__ROOT__/Public/Web/Retrieve password/js/jquery.metadata.js"></script>
+    <script type="text/javascript" src="__ROOT__/Public/Web/Retrieve password/js/resgin.js"></script>
+    <style type="text/css">
+        html,body {
+            height: 100%;
+        }
+        .form {
+            width: 100%;
+            max-width:500px;
+            height: 275px;
+            margin: 25px auto 0px auto;
+            padding-top: 25px;
+        }
+
+        .login-title h1 {
+            margin-top: 10px !important;
+        }
+        .login-title small {
+            color: #fff;
+        }
+
+        .link p {
+            line-height: 20px;
+            margin-top: 30px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function  () {
+            //获取短信验证码
+            var validCode=true;
+            $(".msgs").click (function  () {
+                var time=60;
+                var code=$(this);
+                if (validCode) {
+                    validCode=false;
+                    code.addClass("msgs1");
+                    var t=setInterval(function  () {
+                        time--;
+                        code.html(time+"秒");
+                        if (time==0) {
+                            clearInterval(t);
+                            code.html("重新获取");
+                            validCode=true;
+                            code.removeClass("msgs1");
+                        }
+                    },1000)
+                }
+                var telphone=$('#telphone').val();            
+                $.post('__URL__/getVerifyCode',{'account':telphone},function(data)
+                {
+                    data=eval("("+data+")");       
+                })
+            })
+        });
+    </script>
+</head>
+
+<body>
+<nav class="navbar navbar-custom navbar-fixed-top " style="border-width: 0 0 30px" role="navigation">
+    <div class="navbar-header pull-left">
+        <a class="navbar-brand page-scroll" href="__APP__"><img class="logo_img"  src="__ROOT__/Public/Web/index/images/logo.png"></a>
+    </div>
+    <ul class="nav navbar-nav font_nav visible-lg">
+        <!-- row_nav.html start -->
+		<include file='Public:row_nav' />
+		<!-- row_nav.html end -->
+    </ul>
+    <div class="Administrato">
+        <p>用户数</p>
+        <span><?php echo $num;?></span>
+    </div>
+    <div class=" pull-right">
+        <div class="button_container toggle">
+            <span class="top"></span><span class="middle"></span><span class="bottom"></span>
+        </div>
+    </div>
+    <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+            <ul>
+                <!-- column_nav.html start -->
+				<include file='Public:column_nav' />
+				<!-- column_nav.html end -->
+            </ul>
+        </nav>
+    </div>
+</nav>
+<div class="container-fluid" style="margin-top: 5%;height: 670px">
+    <div class="col-md-6" style="margin-top: 8%">
+        <div class="form">
+            <form id="signupForm" method="post" action="__URL__/updatepwd" class="zcform">
+                <p class="clearfix">    
+                    <input id="telphone" name="telphone" class="required" value="" placeholder="请输入您的注册账号（手机号码／邮箱）" />
+                </p>
+                <p class="clearfix">
+                    <input type="text" name="verifyCode" value="" placeholder="请输入验证码" class="c_code_msg" style="margin-right: 10px;">
+                    <span class="msgs">获取短信验证码</span>
+                </p>
+                <p class="clearfix"><input class="submit" type="submit" value="下一步"/></p>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div style="float:left;margin-left: 10%"><img style="width: 100%;float: left" src="__ROOT__/Public/Web/sign%20in/D_1.png" alt=""/></div>
+    </div>
+</div>
+<!-- footer.html start -->
+<include file='Public:footer' />
+<!-- footer.html end -->
+</body>
+<script src="__ROOT__/Public/Web/contact%20us/js/bootstrap.min.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/hallooou.js"></script>
+</html>

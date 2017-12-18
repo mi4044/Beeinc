@@ -1,0 +1,18 @@
+.shop_conter{margin-top: 75px}
+.Explain_title{text-align: center;letter-spacing: 4px;font-size: 2.5em;font-family:'PingFang Light';color: #00cac8}
+.Explain_conter{margin-top: 50px}
+.Explain_conter p{color:#332c2b;letter-spacing: 2px;font-size: 18px;font-family: "PingFang Light";margin-left: 13%}
+.Explain_footer{margin-top: 60px;;margin-left: 12%}
+.Explain_footer div{width:400px;height: 90px;border: 1px solid #000000;margin-left: 20px;float: left;text-align: center;line-height: 90px;color: #332c2b;font-family: 'PingFang Regular'}
+.Explain_footer img{margin-left: 20px;margin-top: 15px}
+.messsub{height: 500px}
+.messsub input{;width:500px; height:45px;margin-top: 180px;;margin-left: 40%;
+    border-radius: 0;
+    border: 0;
+    text-transform: none;
+    font-family: "PingFang Regular";
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    background: #0ad1dd;}
+.Explain_conter span{letter-spacing: 4px;font-size: 26px;font-family:'PingFang Light';position: relative;left: 32%;top: -25px}

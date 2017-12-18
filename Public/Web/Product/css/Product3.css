@@ -1,0 +1,73 @@
+.bg02{background-color: #eeeeee}
+dl li{font-size: 45px}
+.Product_title_3{background-image: url('../img/蜜蜂/蜜蜂详情banner.png');height: 570px;margin-top: -20px}
+.Product_title_3 div{margin-top: 200px;margin-left: 130px;width: 500px;text-align: center;font-size: 18px}
+.Product_title_3 span{font-size: 45px;line-height: 70px;}
+.Product_title_4{width: 97%;margin-left: 1.8%;}
+.Product_conter_1 div{width: 600px;height: 570px;font-size: 18px;margin-top: 50%}
+.Product_conter_2 dl{text-align: center}
+.Product_conter_2 dl li{margin-top: 100px}
+.Product_conter_3 {width: 800px;margin-left: 20%;height: 570px;font-size: 18px;margin-top: 10%}
+.Product_conter_3 div{height: 200px}
+.Product_conter_3 div span{font-size: 24px}
+.Product_conter_3 div p{margin-top: 20px}
+.Product_title_5{width: 600px;font-size: 18px;;margin-top: 19%}
+.Product_title_5 dl li{font-size: 45px;margin-left: 35%}
+.Product_title_5 p{position: relative;left: 150px}
+.Product_title_6{width: 600px;font-size: 18px;margin-top: 50%}
+.Product_footer_1 dl li{text-align: center;font-size: 45px;margin-top: 5%}
+.Product_footer_1 .row .col-md-4 div {margin-left: 20%;font-size: 18px;margin-top: 10%}
+.Product_footer_1 .row .col-md-4 div span{font-size: 24px;}
+.Product_footer_1 .row .col-md-4 div p{font-size: 15px;margin-top: 20px}
+.Product_footer_1 .row .col-md-3 div {margin-left: 25%;font-size: 18px;margin-top: 10%}
+.disabled{margin-top: 80px;margin-left: 40%;background-color: #00bbb9;color: #FFFFFF;width: 400px;height:40px;border:1px #00bbb9 solid;}
+.duanxi_title_1{background-image: url('../img/蜜蜂/短信服务详情_02.png');height: 570px;margin-top: -20px}
+.duanxi_title_2{margin-top: 50px;height: 200px}
+.duanxi_title_2 span{margin-left: 33%;font-size: 30px;}
+.duanxi_title_2 p{margin-top: 20px;text-indent: 2em;font-size: 16px}
+
+/*Product_4.html css*/
+body{font-family: "PingFang Light"}
+.Product4_title_1{background-image: url('../img/蜜蜂/石全石美详情1.jpg');height: 950px;margin-top: -20px}
+.Product4_title_1 div{margin-top: 200px;margin-left: 700px;width: 500px;text-align: center;font-size: 18px;color: #FFFFFF}
+.Product4_title_1 span{font-size: 45px;line-height: 80px;color: #21cac7}
+.Product4_title_1 dd{position: relative;bottom: -390px;letter-spacing: 2px;color: #FFFFFF;margin-left: 100px;font-family: 'PingFang Light';font-size: 18px}
+.Product4_conter_1 {width: 600px;height: 570px;font-size: 18px;margin-top: 20%}
+.Product4_conter_1 span{font-size: 30px;}
+.Product4_conter_1 p{margin-top: 20px}
+.Product4_title_2{height: 960px;;background: url('../img/蜜蜂/石全石美详情3.jpg');color: #FFFFFF}
+.Product4_conter_2 {width: 600px;height: 570px;font-size: 18px;margin-top: 40%}
+.Product4_conter_2 span{font-size: 30px;}
+.Product4_conter_2 p{margin-top: 20px}
+.Product4_title_3{height: 960px;;background: url('../img/蜜蜂/石全石美详情5.jpg')}
+.Product4_title_3 span{font-size: 24px;position: relative;left: 400px}
+.Product4_title_3 p{position: relative;text-align: center;top: 25px}
+.Product4_conter_3{background-image: url('../img/蜜蜂/石全石美详情6-1.png');background-size: 100% 100%;position: relative;width: 46%;height: 800px;float: left;z-index: 100}
+.Product4_conter_3 div{position: relative;top: 30%}
+.Product4_conter_3 span{font-size: 30px;position: relative;left: 30%;}
+.Product4_conter_3 p{font-size: 18px;position: relative;left: 30%;top: 40px}
+.Product4_conter_4{position: relative;width: 54%;height: 800px;float: left}
+.Product4_conter_4 img{height: 800px;float: left;position: relative;right: 30px}
+.Product4_conter_5{background-image: url('../img/蜜蜂/石全石美详情6-2.png');background-size: 100% 100%;position: relative;width: 46%;height: 800px;float: left;z-index: 100}
+.Product4_conter_5 div{position: relative;top: 30%}
+.Product4_conter_5 span{font-size: 30px;position: relative;left: 30%;}
+.Product4_conter_5 p{font-size: 18px;position: relative;left: 30%;top: 40px}
+.Product4_conter_6{position: relative;width: 54%;height: 800px;float: left}
+.Product4_conter_6 img{height: 800px;float: left}
+.Product4_title_4{height: 950px;background: url('../img/蜜蜂/石全石美详情7.jpg');color: #FFFFFF}
+.Product4_title_4 div{position: relative;left: 40px;top: 150px}
+.Product4_title_4 span{font-size: 45px;}
+.Product4_title_4 p{font-size: 18px;position: relative;top: 25px;letter-spacing: 1px}
+.Product4_title_4 a{font-size: 20px;color: #1ebbb8;position: relative;left: 40px;top:70px}
+.Product4_title_5{height: 960px;background: url('../img/蜜蜂/石全石美详情8.jpg');color: #FFFFFF}
+.Product4_title_5 div{float: right;text-align: right;position: relative;right: 100px;top: 100px}
+.Product4_title_5 span{font-size: 45px;}
+.Product4_title_5 p{font-size: 18px;position: relative;top: 25px;letter-spacing: 1px}
+.Product5_title_5{height: 880px;background: url('../img/蜜蜂/石全石美详情9.jpg')}
+.Product5_title_5 div{position: relative;left: 150px;top: 220px}
+.Product5_title_5 span{font-size: 45px;}
+.Product5_title_5 dd{font-size: 30px;position: relative;top: 10px}
+.Product5_title_5 p{font-size: 18px;position: relative;top: 25px;letter-spacing: 1px}
+.Product6_title_6{height: 230px;background-color: #FFFFFF}
+.Product6_title_6 p{text-align: center;font-size: 16px;position: relative;top: 50px}
+.disableds{margin-top: 100px;margin-left: 40%;background-color: #00bbb9;color: #FFFFFF;width: 400px;height:40px;border:1px #00bbb9 solid}

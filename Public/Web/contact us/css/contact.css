@@ -1,0 +1,136 @@
+@charset "utf-8";
+*{ margin:0px; padding:0px;}
+.clear{ clear:both}
+small{ padding-left:7px; font-size:12px; color:#000; font-weight:normal;}
+.body{ width:100%; height:100%; display:block; overflow:hidden; margin:0px; padding:0px}
+
+
+.box-bj{ width:100%; height:100%; margin:0px; padding:0px; position:absolute; overflow:hidden; left:0px;}
+.box-bj img{ width:100%; height:100%; margin:0px; padding:0px;}
+
+.box-nav-bj{ width:300px; height:100%; margin:0px; padding:0px; position:absolute; right:0px; z-index:-5;background-color: #3E4952;}
+.box-nav-bj img{ width:100%; height:100%; margin:0px; padding:0px; position:absolute; right:0px; z-index:-5}
+
+.box-nav{ width:85px; height:auto; margin:0 0 0 135px; padding:0px; z-index:20; position:absolute; right:165px; top:2%; _top:150px;}
+.box-nav li{ height:50px; margin:18px 0; padding:0px; text-align:center; line-height:35px;list-style: none}
+.box-nav li a{text-decoration:none; font-size:18px; color:#fff;}
+.box-nav li:hover a{ font-size:18px; color: #12e7c7;}
+.box-phone{ position:absolute; right:240px; bottom:100px;float: left}
+.box-phone1{ position:absolute; right:180px; bottom:100px;float: left;}
+.box-phone2{ position:absolute; right:120px; bottom:100px;float: left;}
+.box-phone3{ position:absolute; right:60px; bottom:100px;float: left;}
+.box-phone4{ position:absolute; right:0px; bottom:100px;float: left;}
+.box-phone p{ font-family:"微软雅黑"; color:#fff; font-size:15px; line-height:30px;}
+
+.box-dibu{ width:93%; height:auto; margin:0 auto; position:absolute; bottom:0px; left:3%; z-index:30;}
+.box-dibu1{ width:60%; height:auto; margin:0 auto; float:left; font-size:12px; color:#fff;}
+.box-dibu1 p{font-size:12px; color:#fff; line-height:25px;}
+.box-dibu2{ width:30%; height:auto; margin:0 auto; float:right;}
+.box-dibu2 a img{ width:34px; height:34px; float:right; display:block; margin:0 0 0 15px;}
+
+/* 弹出css */
+#mintbar{font-size:14px;font-family:Arial,Helvetica,Sans-serif;color:#FFF;padding:0;position: absolute;top:40px; right:50px; z-index:2000;width:47px;text-align:center;height:62px;}
+#mintbar div{position:relative;margin:0 auto;padding-top:10px;width:960px;height:30px;}
+#mintbar div h2{float:left;font-size:16px;}
+#closebtn{float:right;}
+#mint{cursor:pointer;position:relative;z-index:10; height:100%;}
+#mint img{ position:absolute; right:50px; top:40px; display:block;}
+/*轮播*/
+    html, body {
+        position: relative;
+        height: 100%;
+    }
+    body {
+
+        font-size: 14px;
+        color:#000;
+        margin: 0;
+        padding: 0;
+    }
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .number{margin-left: 55%}
+    .nav_ul{float: left;width: 30%;margin-left: 40px}
+    .nav_ul li{float: left;margin-left:20px;margin-top: 55px;list-style: none}
+    .nav_ul li a{text-decoration: none;color: #332c2b;}
+    .text_long{border-right-style: none;border-top-style: none;border-left-style: none;border-bottom: 1px solid #000000;width: 90%}
+.clears{ clear:both;}
+/*messages*/
+.messages{padding:20px 0;}
+.messages input,.messages select,.messages textarea{margin:0;padding:0; background:none; border:0; font-family:"Microsoft Yahei";}
+.messlist {height:30px;margin-bottom:20px;}
+.messlist label{float:left; height:30px; font-size:15px;color: rgba(29, 20, 34, 0.56); line-height:30px;padding-right:10px;font-family: "PingFang Regular"}
+.messlist input{float:left;width:300px;height:28px;padding-left:5px;border:#ccc 1px solid;}
+.messlist.textareas{ height:auto;}
+.messlist textarea{float:left;width:400px; height:110px;padding:5px;border:#ccc 1px solid;}
+.messlist.yzms input{width:100px;}
+.messlist.yzms .yzmimg{ float:left;margin-left:10px;}
+.messsub{padding:0px 0 0 110px;}
+.messsub input{width:130px; height:35px;margin-top: 30px; background: #0ad1dd; font-size:14px; font-weight:bold; cursor:pointer;float: right;margin-right: 1%}
+form .messlist input{border-right-style: none;border-top-style: none;border-left-style: none;border-bottom: none;width: 50%}
+.kao{margin-left: 8%;border-right-style: none;border-top-style: none;border-left-style: none;border-bottom: 1px solid  #c7c7c7;width: 90%;height: 30px}
+form .messlist textarea{resize:none;outline:none;border-right-style: none;border-top-style: none;border-left-style: none;border-bottom: 1px solid #c7c7c7;width: 90%;margin-left: 25px}
+figure.effect-sarah img {
+    width: -webkit-calc(100% + 20px);
+    width: calc(100% + 20px);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-10px,0,0);
+    transform: translate3d(-10px,0,0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+
+.grid figure img {
+    position: relative;
+    display: block;
+    min-height: 100%;
+    opacity: 1;
+}
+figure.effect-sarah {
+    background: #27ffe9;
+}
+.grid figure {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    overflow: hidden;
+    margin: -0.135em;
+    height: 400px;
+    text-align: center;
+    cursor: pointer;
+}
+ol, ul {
+    list-style: none;
+}
+.conract{width: 100%;height: 480px;background:url(../images/L_1.png)center  }
+.left_g{margin-left: 100px}
+@media (max-width: 769px) {
+    .menu ul{margin-left: -32px}
+    .left_g{margin-left: 0px}
+    form .messlist input{border-right-style: none;border-top-style: none;border-left-style: none;border-bottom: 1px solid #000000;width: 100%}
+    form .messlist textarea{border-right-style: none;border-top-style: none;border-left-style: none;border-bottom: 1px solid #000000;width: 100%}
+}
+.contact_1{width: 1000px}

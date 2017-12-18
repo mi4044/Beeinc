@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>定制服务-蜜蜂科技</title>
+	<link rel="shortcut icon" href="__ROOT__/Public/Web/images/logo.ico" type="image/x-icon" />
+    <link href="__ROOT__/Public/Web/contact%20us/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/hallooou.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/color_main.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/contact.css" rel="stylesheet">
+    <link rel="stylesheet" href="__ROOT__/Public/Web/contact%20us/css/Define..css" />
+    <link href="__ROOT__/Public/Web/index/css/animate.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/font/font.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/layer.css" rel="stylesheet">
+    <style>
+        .col-md-4 div{height: 440px;background-color: #FFFFFF}
+        .col-md-4 div p{text-align: center;position: relative;top: 140px;font-size: 34px;font-family: 'PingFang Light'}
+        .col-md-4 div dd{margin-left: 70px}
+        .col-md-4 div dd span a{margin-left: 50px;position:relative;top:205px;font-size: 18px;font-family: "PingFang ";color: #00cac8 }
+        .slideBox{margin-top: 0px}
+    </style>
+</head>
+
+<body style="background-color: #f5f5f5">
+<div style="width: 100%;height: 120px">
+<nav class="navbar navbar-custom navbar-fixed-top " style="border-width: 0 0 30px" role="navigation">
+        <div class="navbar-header pull-left">
+            <a class="navbar-brand page-scroll" href="__APP__"><img class="logo_img"  src="__ROOT__/Public/Web/index/images/logo.png"></a>
+        </div>
+        <ul class="nav navbar-nav font_nav visible-lg">
+            <!-- row_nav.html start -->
+			<include file='Public:row_nav' />
+			<!-- row_nav.html end -->
+        </ul>
+        <div class="Administrato">
+            <p>用户数</p>
+            <span id="team"><?php echo $num;?></span>
+        </div>
+        <div class=" pull-right">
+            <div class="button_container toggle">
+                <span class="top"></span><span class="middle"></span><span class="bottom"></span>
+            </div>
+        </div>
+        <div class="overlay" id="overlay">
+            <nav class="overlay-menu">
+                <ul>
+                    <!-- column_nav.html start -->
+					<include file='Public:column_nav' />
+					<!-- column_nav.html end -->
+                </ul>
+            </nav>
+        </div>
+    </nav>
+<div class="menu">
+    <ul>
+        <li id="one1"><a href="index.html">软件列表</a></li>   
+        <li id="one2"><a href="javascript:void(0);"  style="color: #34bbc4">服务项目</a></li>
+    </ul>
+</div>
+    <div class="clear"></div>
+    <div style="width: 96%;margin-left: 1.8%;">
+            <div class="row">
+                <div class="col-md-4 col-xs-6">
+                    <div class="slideBox">
+                        <div class="bd">
+                            <a class="pic"  href="javascript:void(0);"><img src="__ROOT__/Public/Web/Online/img/d_message.png" alt=""/></a>
+                        </div>
+                    </div>
+                    <div>
+                        <p>短信服务</p>
+                        <dd>
+                            <span><a href="dexplain.html">购买说明 ></a></span><span><a href="messageinfo.html">进一步了解 ></a></span><span><a href="__APP__/recharge/index">购买 ></a></span>
+                        </dd>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-6">
+                    <div class="slideBox">
+                        <div class="bd">
+                            <a class="pic"  href="javascript:void(0);"><img src="__ROOT__/Public/Web/Online/img/d_house.png" alt=""/></a>
+                        </div>
+                    </div>
+                    <div>
+                        <p>户型定制</p>
+                        <dd>
+                            <span><a href="hexplain.html">购买说明 ></a></span><span><a href="javascript:void(0);">进一步了解 ></a></span><span><a href="javascript:void(0);">购买 ></a></span>
+                        </dd>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-6">
+                    <div class="slideBox">
+                        <div class="bd">
+                            <a class="pic"  href="javascript:void(0);"><img src="__ROOT__/Public/Web/Online/img/d_scene.png" alt=""/></a>
+                        </div>
+                    </div>
+                    <div>
+                        <p>场景定制</p>
+                        <dd>
+                            <span><a href="javascript:void(0);">购买说明 ></a></span><span><a href="javascript:void(0);">进一步了解 ></a></span><span><a href="javascript:void(0);">购买 ></a></span>
+                        </dd>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div style="height: 200px"></div>
+<div class="clear"></div>
+<!-- footer.html start -->
+<include file='Public:footer' />
+<!-- footer.html end -->
+</div>
+</body>
+<script src="__ROOT__/Public/Web/contact%20us/js/jquery.min.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/bootstrap.min.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/hallooou.js"></script>
+</html>

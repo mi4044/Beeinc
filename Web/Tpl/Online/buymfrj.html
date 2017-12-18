@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>购买蜜蜂软件-蜜蜂科技</title>
+    <meta name="viewport" content="user-scalable=no,width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="__ROOT__/Public/Web/images/logo.ico" type="image/x-icon" />
+    <link href="__ROOT__/Public/Web/contact%20us/css/bootstrap.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/hallooou.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/color_main.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/Define..css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/font/font.css" rel="stylesheet">
+    <link rel="stylesheet" href="__ROOT__/Public/Web/contact%20us/css/shop.css" />
+    <link href="__ROOT__/Public/Web/index/css/animate.css" rel="stylesheet">
+</head>
+<body id="home">
+<nav class="navbar navbar-custom navbar-fixed-top " style="border-width: 0 0 30px" role="navigation">
+    <div class="navbar-header pull-left">
+        <a class="navbar-brand page-scroll" href="__APP__"><img class="logo_img"  src="__ROOT__/Public/Web/index/images/logo.png"></a>
+    </div>
+    <ul class="nav navbar-nav font_nav visible-lg">
+        <!-- row_nav.html start -->
+		<include file='Public:row_nav' />
+		<!-- row_nav.html end -->
+    </ul>
+    <div class="Administrato">
+        <p>用户数</p>
+        <span id="team"><?php echo $num;?></span>
+    </div>
+    <div class=" pull-right">
+        <div class="button_container toggle">
+            <span class="top"></span><span class="middle"></span><span class="bottom"></span>
+        </div>
+    </div>
+    <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+            <ul>
+                <!-- column_nav.html start -->
+				<include file='Public:column_nav' />
+				<!-- column_nav.html end -->
+            </ul>
+        </nav>
+    </div>
+</nav>
+<div class="container shop_conter">
+    <div class="shop_title">购买蜜蜂软件服务</div>
+    <div style="margin-top: 50px;margin-left: 12%">
+        <img src="__ROOT__/Public/Web/contact%20us/images/蜜蜂详情1.png">
+    </div>
+    <div class="shop_form">
+        <form id="thisForm" class="messages">
+            <div class="messlist">
+                <label>姓名</label>
+                <div class="kao">
+                    <input class="stext" type='text' name="Name"  placeholder="请输入您的名字" id="Name" value="" />
+                    <span class="tipinfo"></span>
+                </div>
+                <div class="clears"></div>
+            </div>
+            <div class="messlist">
+                <label>电话</label>
+                <div class="kao">
+                    <input class="stext" type='text' name="sms"placeholder="请输入您的姓名 请输入您的电话，我们会将石全石美的激活码发送至您的手机" id="sms" value="" />
+                    <span class="tipinfo"></span>
+                </div>
+                <div class="clears"></div>
+            </div>
+            <div class="messlist">
+                <label>公司</label>
+                <div class="kao">
+                    <input class="stext" type='text' name="corpName"  placeholder="请输入您的公司名称，便于对贵公司的售后服务" id="corpName" value="" />
+                    <span class="tipinfo"></span>
+                </div>
+                <div class="clears"></div>
+            </div>
+            <div class="messlist">
+                <label>地址</label>
+                <div class="kao">
+                    <input class="stext" type='text' name="address"  placeholder="请输入您的公司地址，便于对贵公司的售后服务" id="address" value="">
+                    <span class="tipinfo"></span>
+                </div>
+                <div class="clears"></div>
+            </div>
+            <div class="messlist">
+                <label>金额</label>
+                <span>5000</span>
+                <div class="clears"></div>
+            </div>
+            <div class="messsub">
+                <input onclick="login()" id="aa"  type="button"  value="确认信息并支付" style="color:#fff;" />
+            </div>
+        </form>
+    </div>
+</div>
+<!-- footer.html start -->
+<include file='Public:footer' />
+<!-- footer.html end -->
+</body>
+<script type="text/javascript" src="__ROOT__/Public/Web/contact%20us/js/jquery-1.11.3.js" ></script>
+<script type="text/javascript" src="__ROOT__/Public/Web/contact%20us/js/main.js" ></script>
+<script type="text/javascript" src="__ROOT__/Public/Web/contact%20us/js/TouchSlide.1.1.js" ></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/bootstrap.min.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/hallooou.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/jquery.smoove.js"></script>
+<script>$('.block').smoove({offset:'40%'});</script>
+</html>

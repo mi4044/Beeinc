@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta content=/>
+    <title>新闻动态-蜜蜂科技</title>
+	<link rel="shortcut icon" href="__ROOT__/Public/Web/images/logo.ico" type="image/x-icon" />
+    <link href="__ROOT__/Public/Web/contact%20us/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/hallooou.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/color_main.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/contact.css" rel="stylesheet">
+    <link rel="stylesheet" href="__ROOT__/Public/Web/contact%20us/css/Define..css" />
+    <script type="text/javascript" src="__ROOT__/Public/Web/Define/js/jquery1.42.min.js"></script>
+    <script type="text/javascript" src="__ROOT__/Public/Web/Define/js/js.js"></script>
+    <script type="text/javascript" src="__ROOT__/Public/Web/Define/js/bootstrap.min.js"></script>
+    <link href="__ROOT__/Public/Web/index/css/animate.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/font/font.css" rel="stylesheet">
+    <style type="text/css">
+        strong{font-family: "PingFang Light";color: #767676;font-size: 15px}
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            function anim(duration){
+                $('#mint').animate(
+                        {height: 'toggle'},
+                        {duration: duration}
+                );
+            }
+            $('#closebtn').click(function() {
+                $('#mintbar').slideUp();
+                anim(600);
+            });
+
+            $('#mint').click(function() {
+                anim(600);
+                $('#mintbar').slideDown('slow');
+            });
+
+        });
+        window.onload = function() {
+            //
+            var max = 1000000,
+                    o = document.getElementById('team');
+            var chrome = /chrome/i.test(navigator.userAgent);
+
+            // 获取保存的数据
+            if(chrome) {
+                data_num = sessionStorage.getItem("num") || "";
+            }
+            var num_now = parseInt(data_num) || 50000;
+
+            o.innerHTML = num_now + 1;
+
+            // 每 0.1 秒更新一次数字，并保存数据
+            setInterval(function() {
+                num_now = num_now >= max ? 1 : num_now + 1;
+                o.innerHTML = num_now;
+                if(chrome) {
+                    sessionStorage.setItem("num", num_now);
+                }
+                else {
+                    document.cookie = "num=" + num_now + ";path=/;";
+                }
+            }, 18000);
+        };
+        $(document).ready(function(){
+            $("#anniu").click(function(){
+                $("#dianji").show();
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+<div style="width: 100%;height: 150px">
+    <nav class="navbar navbar-custom navbar-fixed-top " style="border-width: 0 0 30px" role="navigation">
+        <div class="navbar-header pull-left">
+            <a class="navbar-brand page-scroll" href="__APP__"><img class="logo_img"  src="__ROOT__/Public/Web/index/images/logo.png"></a>
+        </div>
+        <ul class="nav navbar-nav font_nav visible-lg">
+            <!-- row_nav.html start -->
+			<include file='Public:row_nav' />
+			<!-- row_nav.html end -->
+        </ul>
+        <div class="Administrato">
+            <p>用户数</p>
+            <span><?php echo $num;?></span>
+        </div>
+        <div class=" pull-right">
+            <div class="button_container toggle">
+                <span class="top"></span><span class="middle"></span><span class="bottom"></span>
+            </div>
+        </div>
+        <div class="overlay" id="overlay">
+            <nav class="overlay-menu">
+                <ul>
+                    <!-- column_nav.html start -->
+					<include file='Public:column_nav' />
+					<!-- column_nav.html end -->
+                </ul>
+            </nav>
+        </div>
+    </nav>
+    <div class="menu">
+        <ul>
+            <li><a href="__APP__/news/index.html">公司新闻</a></li>
+            <li style="color: #34bbc4">行业新闻</li>
+        </ul>
+    </div>
+    <br>
+    <div class="clear"></div>
+    <div style="width: 87%;margin: 0 auto;margin-top: 30px">
+        <div class="row video_1" >
+			<volist id="vo" name="data">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <a href="__APP__/news/newsinfo/id/{$vo['id']}">
+                    <div class="column_figure">
+                        <img src="{$vo['cover']}"/>
+                    </div>
+                </a>
+                <h3>{$vo['title']}</h3>
+                <p style="margin-top: 10px;">{$vo['subtitle']}</p>
+                <strong>{$vo['intro']|msubstr=###,0,90} ...</strong>
+                <p style="margin-top: 20px"><a href="__APP__/news/newsinfo/id/{$vo['id']}">Read More <img style="width: 10px;margin-left: 20px" src="__ROOT__/Public/Web/contact%20us/images/new_y.png"></a></p>
+                <p style="height: 50px"></p>
+                <div class="clear"></div>
+            </div>
+			</volist>
+            <div class="clear"></div>
+            <div class="container-fluid" style="height: 150px">
+                <div class="col-xs-12">
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+<!-- footer.html start -->
+<include file='Public:footer' />
+<!-- footer.html end -->
+</div>
+<script type="text/javascript">
+    $(function(){
+        $('#more').more({'address': 'data.php'})
+    });
+</script>
+</body>
+<script type="text/javascript" src="__ROOT__/Public/Web/contact%20us/js/jquery.more%20.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/jquery.min.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/bootstrap.min.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/hallooou.js"></script>
+</html>

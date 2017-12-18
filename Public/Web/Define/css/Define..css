@@ -1,0 +1,109 @@
+
+/* 重置列表元素 */
+ul, ol { list-style: none; }
+
+#footer{ overflow:hidden; color:#fff; }
+#footer .b-navbox{ display: none;}
+#footer .b-nav li{ float: left; width: 120px;height: 200px ;color: #fff; font-family: "PingFang Light";font-size: 14px}
+#footer .b-nav p{font-family:   "PingFang Light";font-size: 18px}
+#footer .b-nav { width: 100%; font-family: FZLTHK--GBK1-0}
+#footer .b-nav li a{ display: block; color: #FFFFFF; line-height: 30px;}
+#footer .b-nav li h4{ height: 40px; line-height: 40px;}
+#footer .b-nav li a:hover,#footer .b-nav li a:active{ color: #00bbb9; }
+#footer .rmw{ display: none;line-height: 40px;}
+#footer .rmw img{ width: 150px;}
+#footer .copy{background: #2c2929; line-height: 45px; color: #999;}
+#footer .copy a{ display: inline-block; margin: 0 5px; padding: 0 10px;color: #999;}
+#footer .copy a:hover,#footer .copy a:active{ background: #202427; color: #999;}
+@media (min-width: 768px) {
+    #footer .b-navbox{ display: block;}
+}
+@media (min-width: 992px) {
+    #footer .b-nav { width: 80%;}
+    #footer .rmw{ display: block;width: 400px}
+}
+@media only screen and ( max-width:480px ) {
+    #footer .copy div.fr{ display: none;}
+}
+
+
+.slideBox {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slideBox .bd {
+    width: 100%;
+    height: 100%;
+}
+
+.slideBox .bd a {
+    display: block;
+    position: relative;
+    width: 100%;
+
+}
+
+
+.slideBox .hd {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    text-align: center;
+    z-index: 2;
+    overflow: hidden;
+}
+
+
+
+.slideBox .hd li.on {
+    background-color: #E8A651;
+}
+
+.slideBox .prev, .slideBox .next {
+    position: absolute;
+    top: 50%;
+    width: 33px;
+    height: 50px;
+    margin-top: -25px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+
+
+.bg01 {
+    background-color: #f8f3ed;
+}
+
+.column_figure {
+    width: 100%;
+    height: 0;
+    padding-bottom: 55.946%;
+    position: relative;
+    overflow: hidden;
+}
+
+.column_figure img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.sec02 .container-fluid .row .text-center{
+    height: 220px;
+    margin-top: 5%;
+    font-family: "PingFang Regular";
+}
+@media (max-width: 300px) {
+    .sec02 .container-fluid .row .text-center{
+        height: 220px;
+        width: 300px;
+        margin-top: 5%;
+        font-family: "PingFang Regular";
+    }
+}

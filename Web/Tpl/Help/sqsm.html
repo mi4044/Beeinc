@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title></title>
+	<link rel="shortcut icon" href="__ROOT__/Public/Web/images/logo.ico" type="image/x-icon" />
+    <link type="text/css" href="__ROOT__/Public/Web/contact/css/contact.css" rel="stylesheet">
+    <link rel="stylesheet" href="__ROOT__/Public/Web/contact/css/bootstrap.css">
+    <script type="text/javascript" src="__ROOT__/Public/Web/contact/js/jquery1.42.min.js"></script>
+    <script type="text/javascript" src="__ROOT__/Public/Web/contact/js/contact.js"></script>
+    <script type="text/javascript" src="__ROOT__/Public/Web/contact/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="__ROOT__/Public/Web/contact/css/style.css">
+    <script type="text/javascript" src="__ROOT__/Public/Web/contact/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="__ROOT__/Public/Web/contact/js/tabs.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            function anim(duration){
+                $('#mint').animate(
+                        {height: 'toggle'},
+                        {duration: duration}
+                );
+            }
+            $('#closebtn').click(function() {
+                $('#mintbar').slideUp();
+                anim(600);
+            });
+
+            $('#mint').click(function() {
+                anim(600);
+                $('#mintbar').slideDown('slow');
+            });
+
+        });
+        window.onload = function() {
+            //
+            var max = 1000000,
+                    o = document.getElementById('team');
+            var chrome = /chrome/i.test(navigator.userAgent);
+
+            // 获取保存的数据
+            if(chrome) {
+                data_num = sessionStorage.getItem("num") || "";
+            }
+            var num_now = parseInt(data_num) || 50000;
+
+            o.innerHTML = num_now + 1;
+
+            // 每 0.1 秒更新一次数字，并保存数据
+            setInterval(function() {
+                num_now = num_now >= max ? 1 : num_now + 1;
+                o.innerHTML = num_now;
+                if(chrome) {
+                    sessionStorage.setItem("num", num_now);
+                }
+                else {
+                    document.cookie = "num=" + num_now + ";path=/;";
+                }
+            }, 18000);
+        };
+        $(document).ready(function(){
+            $("#anniu").click(function(){
+                $("#dianji").show();
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+<!-- public.html start -->
+<include file='Public:public' />
+<!-- public.html end -->
+<br>
+<hr style="width: 80%;margin-left: 10%; border-bottom:1px solid rgba(0, 0, 0, 0.79);">
+<!-- Start Tabs -->
+<div class="tabs" >
+
+    <!-- Start Container tab1 -->
+    <div id="tab1">
+        <div><span class="divcss5-x5">Software specifications </span></div>
+        <div class="label" id="l1">
+            <h5><a href="#tab1"><i  id="i1"></i><img src="__ROOT__/Public/Web/contact/images/—.png" alt=""/>下载安装注册软件操作</a></h5>
+        </div>
+
+        <div class="content left" id="content1">
+            <h4>石全石美iPad版本操作说明</h4>
+            <p style="margin-top: 50px">下载安装注册软件操作</p>
+            <p style="margin-top: 30px">  1.登录蜜蜂科技官网www.beeway.cn 找到“石全石美”软件下载图标，点击下载安装。     </p>
+            <p><img style="width: 100%;height:100%" src="__ROOT__/Public/Web/contact/images/ZC_03.png" alt=""/></p>
+            <div style="margin-top: 50px">
+                <p>2.下载完成之后，软件提示注册登录，点击“注册账号”。</p>
+                <p><img  style="width: 100%;height:100%" src="__ROOT__/Public/Web/contact/images/ZC_07.png" alt=""/></p>
+            </div>
+            <div style="margin-top: 50px">
+                <p style="width: 90%">3.按照软件提示，输入蜜蜂科技提供的注册码、输入手机号获取的验证码、输入登录密码进行软件注册。注册成功后返回上一步登录界面，登录软件。</p>
+                <p><img  style="width: 100%;height:100%" src="__ROOT__/Public/Web/contact/images/ZC_11.png" alt=""/></p>
+            </div>
+            <div style="margin-top: 50px">
+                <p>4.登录后，等待程序自动下载资源。</p>
+                <p><img  style="width: 100%;height:100%" src="__ROOT__/Public/Web/contact/images/ZC_14.png" alt=""/></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Container tab1 -->
+
+    <!-- Start Container tab2 -->
+    <div id="tab2" class="container">
+        <div class="label" id="l2">
+            <h5><a href="#tab2" id="a2"><i class="icon-leaf" id="i2"></i><img src="__ROOT__/Public/Web/contact/images/—.png" alt=""/>软件功能操作 </a></h5>
+        </div>
+        <div class="content left" id="content2">
+            <h4>石全石美iPad版本操作说明</h4>
+            <p style="margin-top: 50px">软件功能操作</p>
+            <p>下载完成之后进入软件主界面，界面包含五大板块场景体验、产品中心、户型定制、企业文化、设置。</p>
+            <p>一、场景体验操作说明</p>
+            <p>1.点击屏幕右上角“场景管理”，进入场景管理界面。</p>
+            <p><img style="width: 100%;height:100%" src="__ROOT__/Public/Web/contact/images/CZ_1.png" alt=""/></p>
+            <div style="margin-top: 50px">
+                <p>2.点击“本地管理”，可以选择并删除场景。</p>
+                <p><img  style="width: 100%;height:100%" src="__ROOT__/Public/Web/contact/images/CZ_03.png" alt=""/></p>
+            </div>
+            <div style="margin-top: 50px">
+                <p>3.点击“下载管理”，选择并下载场景至本地。</p>
+                <p><img  style="width: 100%;height:100%" src="__ROOT__/Public/Web/contact/images/CZ_07.png" alt=""/></p>
+            </div>
+            <div style="margin-top: 50px">
+                <p>4.点击屏幕右上角“正在下载”，查看下载进度。</p>
+                <p><img  style="width: 100%;height:100%" src="__ROOT__/Public/Web/contact/images/CZ_10.png" alt=""/></p>
+            </div>
+            <div style="margin-top: 50px">
+                <p>5.返回场景体验主界面通过分类筛选可快速查找场景。</p>
+                <p>注意：场景分为两类：一类为360度全景场景（缩略图右上方有“360°”标识）；一类为固定视角静帧场景。</p>
+                <p><img  style="width: 100%;height:100%" src="__ROOT__/Public/Web/contact/images/CZ_13.png" alt=""/></p>
+            </div>
+            <div style="margin-top: 50px;">
+                <p>6.选择360度全景场景进入，滑动手指即可全景查看整个场景空间（如下2张图）。</p>
+                <div class="col-xs-6  col-md-6">
+                    <img style="width: 100%;" src="__ROOT__/Public/Web/contact/images/CZ_19.png" alt=""/>
+                </div>
+                <div class="col-xs-6  col-md-6">
+                    <img style="width: 100%;" src="__ROOT__/Public/Web/contact/images/CZ_17.png" alt=""/>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div style="margin-top: 50px">
+                <p>7.两指按住屏幕，向下滑动，即可拉伸视角远观。</p>
+                <p><img  style="width: 100%;height:100%" src="__ROOT__/Public/Web/contact/images/CZ_23.png" alt=""/></p>
+            </div>
+            <div style="margin-top: 50px">
+                <p>8.两指按住屏幕，向上滑动，即可缩小视角近看。</p>
+                <p><img  style="width: 100%;height:100%" src="__ROOT__/Public/Web/contact/images/CZ_26.png" alt=""/></p>
+            </div>
+            <div style="margin-top: 50px">
+                <p>9.点击界面左下方的白色圆点，进入场景的编辑状态：</p>
+                <p> 9.1撤销与还原操作：</p>
+                <p>   9.2更换产品：选择界面右方的产品列表，点击选择产品图片，然后在场景中需要更换产品的区域点击，实现产品更换。或拖拽产品图片至需要更换的位置，即可实现产品更换。（如下2张图）</p>
+                <div class="col-xs-6  col-md-6">
+                    <img style="width: 100%;" src="__ROOT__/Public/Web/contact/images/CZ_28.png" alt=""/>
+                </div>
+                <div class="col-xs-6  col-md-6">
+                    <img style="width: 100%;" src="__ROOT__/Public/Web/contact/images/CZ_30.png" alt=""/>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div style="margin-top: 50px">
+                <p>9.3移动产品位置：选择“移动”工具，单指按住需要移动的部位滑动手指，即可实现移动。</p>
+                <p><img  style="width: 100%;height:100%" src="__ROOT__/Public/Web/contact/images/CZ_35.png" alt=""/></p>
+            </div>
+            <div style="margin-top: 50px">
+                <p>9.4旋转产品方向：选择“旋转”工具，点击需要旋转的部位，即可实现旋转45度方向。</p>
+                <p><img  style="width: 100%;height:100%" src="__ROOT__/Public/Web/contact/images/CZ_38.png" alt=""/></p>
+            </div>
+            <div style="margin-top: 50px">
+                <p>9.5拆分更换组合：选择“拆分”工具，可以实现组合型产品分开进行更换，比如花边波打线。</p>
+                <p><img  style="width: 100%;height:100%" src="__ROOT__/Public/Web/contact/images/CZ_42.png" alt=""/></p>
+            </div>
+            <div style="margin-top: 50px">
+                <p>9.6添加花片进行铺贴设计：选择“花片”工具，弹出5种拼花效果，从上至下分别为三层波打线拼花、双层波打线拼花、拼花加波打线、拼花加波打线加角花、拼花。</p>
+                <p>点击任意拼花效果，屏幕后生成一个“面区域”，通过输入长宽数值或滑杆调整“面区域”的大小；通过“移动”工具，移动“面区域”的位置。</p>
+                <p>点击右侧产品列表，选择拼花产品，即可在“面区域”内进行铺贴设计。</p>
+                <div class="row">
+                    <div class="col-xs-6  col-md-6">
+                        <img style="width: 100%;" src="__ROOT__/Public/Web/contact/images/CZ_43.png" alt=""/>
+                    </div>
+                    <div class="col-xs-6  col-md-6">
+                        <img style="width: 100%;" src="__ROOT__/Public/Web/contact/images/CZ_45.png" alt=""/>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 50px">
+                    <div class="col-xs-6  col-md-6">
+                        <img style="width: 100%;" src="__ROOT__/Public/Web/contact/images/CZ_50.png" alt=""/>
+                    </div>
+                    <div class="col-xs-6  col-md-6">
+                        <img style="width: 100%;" src="__ROOT__/Public/Web/contact/images/CZ_52.png" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+@charset "utf-8";
+*{margin:0;padding:0;}
+a{text-decoration:none;cursor:pointer;}
+li{list-style:none;}
+img{border:none;}
+
+.left{float:left;}
+.right{float:right;}
+.clearfix:after{content:".";display:block;clear:both;font-size:0;overflow:hidden;height:0;}
+.clearfix{zoom:1;}
+
+/* zcform */
+.zcform p{margin-bottom:35px;}
+.zcform a{ color:#ff7702;}
+.zcform p.last{margin-left:310px;font-size:16px;}
+.zcform p.last input{ cursor:pointer;}
+.zcform label{display:block;float:left;height:48px;line-height:48px;color:#F00;text-indent:10px;}
+.zcform label.one{width:90px;height:48px;text-align:right;color:#000;}
+.zcform input{float:left;font-size:16px;font-family:"微软雅黑";}
+.submit{width: 390px;background:#00bbb9;font-size:20px;letter-spacing:4px;color:#fff;cursor:pointer;}
+
+#telphone,#password,#confirm_password,.submit,#agent{border:1px solid #ccc;width:480px;height:50px;}
+.identifying_code{height:50px;width:180px;_line-height:50px;text-indent:10px;}
+.get_code{height:48px;width:110px;margin-left:10px;border:1px solid #ccc;cursor:pointer;}
+.agreement{margin-left:90px;height:30px;line-height:30px;font-size:12px;}
+.agreement input{display:block;line-height:30px;height:12px;margin:8px 8px 0 5px;border:none;width:12px;}
+
+.msgs{display:inline-block;position: relative;right: -8px;width:150px;color:#fff;font-size:12px;border:1px solid #00bbb9;text-align:center;height:50px;line-height:50px;background:#00bbb9;cursor:pointer;}
+form .msgs1{background:#E6E6E6;color:#818080;border:1px solid #CCCCCC;}
+input{width:280px;height:50px;padding:0 4px;border:1px solid #C8C8C8;margin-right:10px;outline:none;}
+.clearfix{text-align: center}
+@media screen and (max-width: 740px) {
+    #telphone,#password,#confirm_password,.submit,#agent{border:1px solid #ccc;width:337px;height:46px;}
+    input{width:183px;height:45px;border-style:none;padding:0 4px;border:1px solid #C8C8C8;margin-right:10px;outline:none;}
+    .msgs{display: inline-block;width: 103px;color: #fff;font-size: 12px;border: 1px solid #00bbb9;text-align: center;height: 45px;line-height: 45px;background: #00bbb9;cursor: pointer;}.submit{width: 344px;background:#00bbb9;font-size:20px;letter-spacing:4px;color:#fff;cursor:pointer;}
+}
+.font_z{margin-left: 20px;color: rgba(105, 109, 95, 0.45)}
+
+
+
+
+

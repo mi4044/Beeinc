@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常见问题-蜜蜂科技</title>
+	<link rel="shortcut icon" href="__ROOT__/Public/Web/images/logo.ico" type="image/x-icon" />
+    <link type="text/css" href="__ROOT__/Public/Web/contact%20us/css/contact.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/hallooou.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/color_main.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/contact.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact%20us/css/font/font.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="__ROOT__/Public/Web/contact%20us/css/zzsc-demo.css">
+    <link rel="stylesheet" href="__ROOT__/Public/Web/contact%20us/css/tabs-vertical.css">
+    <link href="__ROOT__/Public/Web/index/css/animate.css" rel="stylesheet">
+</head>
+<style>
+    body{font-family: "PingFang Regular"}
+    #scroll-1 {
+        height:800px;
+        overflow:auto;
+        position: fixed;
+    }
+    #scroll-1 ul {
+    }    #scroll-1::-webkit-scrollbar {
+             width:10px;
+             height:10px;
+         }
+</style>
+<body>
+<nav class="navbar navbar-custom navbar-fixed-top " style="border-width: 0 0 30px;position:fixed" role="navigation" id="nav">
+    <div class="navbar-header pull-left">
+        <a class="navbar-brand page-scroll" href="__APP__"><img class="logo_img"  src="__ROOT__/Public/Web/index/images/logo.png"></a>
+    </div>
+    <ul class="nav navbar-nav font_nav visible-lg">
+        <!-- row_nav.html start -->
+		<include file='Public:row_nav' />
+		<!-- row_nav.html end -->
+    </ul>
+    <div class="Administrato">
+        <p>用户数</p>
+        <span id="team"><?php echo $num;?></span>
+    </div>
+    <div class=" pull-right">
+        <div class="button_container toggle">
+            <span class="top"></span><span class="middle"></span><span class="bottom"></span>
+        </div>
+    </div>
+    <div class="overlay" id="overlay" >
+        <nav class="overlay-menu">
+            <ul>
+                <!-- column_nav.html start -->
+				<include file='Public:column_nav' />
+				<!-- column_nav.html end -->
+            </ul>
+        </nav>
+    </div>
+</nav>
+
+<div class="zzsc-container">
+    <div class="tabs-vertical">
+
+        <div style="position: fixed;width: 500px;height: 100px;background-color:#FFFFFF;z-index: 100">
+            <ol style="position: absolute;margin-left: 159px" class="breadcrumb">
+                <li><a href="__APP__/Help/index">客户帮助</a></li>
+                <li class="active">常见问题</li>
+            </ol>
+            <div class="help_1">
+                <span class="divcss5-x5">Software specifications </span>
+            </div>
+        </div>
+        <div id='scroll-1'>    
+            <ul class="left-class">
+                <volist id="vo" name="cate" key="k">
+				<li>
+					<if condition="$k-1 eq '0' ">
+					<a class="tab-active" data-index="{$k-1}" href="#">— {$vo['title']}</a>
+					<else />
+					<a data-index="{$k-1}" href="#">— {$vo['title']}</a>
+					</if>
+				</li>
+				</volist> 
+
+            </ul>
+        </div>
+        <div class="tabs-content-placeholder">
+
+            <volist id="v" name="problem" key="k">
+				<if condition="$k-1 eq 0 ">
+				<div class="tab-content-active">
+					{$v['content']}
+				</div>
+				<else />
+				<div>
+					{$v['content']}
+				</div>
+				</if>
+			</volist>
+        </div>
+
+    </div>
+</div>
+
+<script src="__ROOT__/Public/Web/contact%20us/js/jquery.min.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/js/bootstrap.min.js"></script>
+<script src="__ROOT__/Public/Web/contact%20us/tab/hallooou.js"></script>
+<script>
+    $(document).ready(function() {
+        var widget = $('.tabs-vertical');
+        var tabs = widget.find('ul a'),
+                content = widget.find('.tabs-content-placeholder > div');
+        tabs.on('click', function (e) {
+            e.preventDefault();
+           // Get the data-index attribute, and show the matching content div
+            index = $(this).data('index');
+
+            tabs.removeClass('tab-active');
+            content.removeClass('tab-content-active');
+
+            $(this).addClass('tab-active');
+            content.eq(index).addClass('tab-content-active');
+        });
+
+    });
+    var index;
+    var index2=0;
+    $(document).on('click','ul li a',function(){
+        if(index2!=$(this).attr("data-index")){
+            var _scrollTop = $('#nav').offset().top;
+            $('html,body').stop().animate({scrollTop:_scrollTop-150},350);
+            index2 = $(this).attr("data-index");
+        }
+    });
+</script>
+</body>
+</html>

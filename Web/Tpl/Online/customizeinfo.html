@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="user-scalable=no,width=device-width, initial-scale=1.0">
+    <link href="__ROOT__/Public/Web/contact/css/bootstrap.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact/css/hallooou.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact/css/color_main.css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact/css/Define..css" rel="stylesheet">
+    <link href="__ROOT__/Public/Web/contact/css/font/font.css" rel="stylesheet">
+    <link rel="stylesheet" href="__ROOT__/Public/Web/Customized/css/Customized.css" />
+    <link href="__ROOT__/Public/Web/index/css/animate.css" rel="stylesheet">
+    <script type="text/javascript" src="__ROOT__/Public/Web/contact/js/jquery-1.11.3.js" ></script>
+    <script type="text/javascript" src="__ROOT__/Public/Web/contact/js/main.js" ></script>
+    <style>
+        .slideBox{margin-top: 60px}
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $(':checkbox[name=flag]').click(function(){
+                $(this).parent().parent().find('input:checkbox[value!="'+$(this).val()+'"]').removeAttr('checked')
+                });
+        });
+		function space(Id){
+			var d='#'+Id;
+			var stylename=$(d).val();
+			$.post('__URL__/getcustomizeprice',{'style':stylename},function(data)
+            {
+				$.each(JSON.parse(data), function(idx, obj) {
+					var s='#'+obj.space;
+					
+					$(s).val(obj.price);
+					//row='<div style="position: relative;left: 20px"><input type="checkbox" id="checkbox_a6" class="chk_1"><label style="width: 20px;height: 20px;margin-top: 4px" for="checkbox_a6"></label><span style="float: left;text-indent: 0.5em">客厅</span></div>'
+					//$("#ddd").append(row);
+					//alert(obj.price);
+					
+				});
+			})
+		}
+		function price(spName){
+			var n='#'+spName;
+			var m=$('#money').html();
+			var price=$(n).val();
+			var money=m*1+price*1
+			$('#money').html(money);
+			alert(money);
+		}
+		
+    </script>
+</head>
+<body id="home">
+<nav class="navbar navbar-custom navbar-fixed-top " style="border-width: 0 0 30px" role="navigation">
+    <div class="navbar-header pull-left">
+        <a class="navbar-brand page-scroll" href="#"><img class="logo_img"  src="__ROOT__/Public/Web/index/images/logo.png"></a>
+    </div>
+    <ul class="nav navbar-nav font_nav visible-lg">
+        <li><a href="#" class="button">登录</a></li>
+        <li><a href="#" class="button">充值</a></li>
+        <li><a href="#" class="button">合作企业</a></li>
+        <li><a href="#" class="button">在线购买</a></li>
+    </ul>
+    <div class="Administrato">
+        <p>用户数</p>
+        <span id="team">50000</span>
+    </div>
+    <div class=" pull-right">
+        <div class="button_container toggle">
+            <span class="top"></span><span class="middle"></span><span class="bottom"></span>
+        </div>
+    </div>
+    <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="Product_1.html">产品商城</a></li>
+                <li><a href="#">招商加盟</a></li>
+                <li><a href="xinwen.html">新闻动态</a></li>
+                <li><a href="Wikiword.html">关于我们</a></li>
+                <li><a href="contact_1.html">客户帮助</a></li>
+                <li><a href="#">服务网点</a></li>
+                <li><a href="#">天材资讯</a></li>
+                <li>
+                    <div class="nav_tu">
+                        <ul>
+                            <li><a href="#" class="button">登录</a></li>
+                            <li><a href="#" class="button">充值</a></li>
+                            <li><a href="#" class="button button_none">合作企业</a></li>
+                            <li><a href="#" class="button">在线购买</a></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</nav>
+<div class="Customized_conter">
+<div class="container">
+    <div class="shop_title">购买VR全景户型定制服务</div>
+    <div style="margin-left: 17%">
+        <div class="upload">
+            <input  type="button"  value="上传户型图活参考图片"/>
+        </div>
+    </div>
+</div>
+<div style="width: 96%;margin-left: 1.8%;">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="slideBox">
+                <div class="bd">
+                    <img src="__ROOT__/Public/Web/contact/images/购买定制服务_03.png" alt=""/>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="slideBox">
+                <div class="bd">
+                   <img src="__ROOT__/Public/Web/contact/images/购买定制服务_03.png" alt=""/>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="slideBox">
+                <div class="bd">
+                    <img src="__ROOT__/Public/Web/contact/images/购买定制服务_03.png" alt=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="shop_form">
+        <form id="thisForm" class="messages">
+            <div class="messlist">
+                <label>风格：</label>
+					<volist name="style" id="vo" key="k">
+                    <div style="position: relative;left: 20px">
+						<if condition="$vo.style eq '欧式'">
+						<input  name="flag" type="checkbox" value="{$vo['style']}" onclick="space({$k})" id="{$k}" class="chk_1" checked="checked">
+                        <label style="width: 20px;height: 20px;margin-top: 4px" for="{$k}"></label>
+                        <span style="float: left;text-indent: 0.5em">{$vo['style']}</span>
+						<else />
+						<input  name="flag" type="checkbox" value="{$vo['style']}" onclick="space({$k})" id="{$k}" class="chk_1">
+                        <label style="width: 20px;height: 20px;margin-top: 4px" for="{$k}"></label>
+                        <span style="float: left;text-indent: 0.5em">{$vo['style']}</span>
+						</if>
+                        
+                    </div>
+					</volist>					
+            </div>
+            <div class="messlist" id="ddd">
+                <label>空间：</label>
+				
+				
+				<volist name="space" id="vo" key="k">
+				<div style="position: relative;left: 20px">
+                    <input type="checkbox" id="{$k+20}" class="chk_1" value="{$vo['space']}">
+					 
+                    <label style="width: 20px;height: 20px;margin-top: 4px" for="{$k+20}" onclick='price("{$vo['space']}")'>
+						<input type="hidden" id="{$vo['space']}" value="{$vo['price']}">
+					</label>
+                    <span style="float: left;text-indent: 0.5em">{$vo['space']}</span>
+                </div>
+				</volist>
+				<!--
+                <div style="position: relative;left: 20px">
+                    <input type="checkbox" id="checkbox_a6" class="chk_1">
+                    <label style="width: 20px;height: 20px;margin-top: 4px" for="checkbox_a6"></label>
+                    <span style="float: left;text-indent: 0.5em">客厅</span>
+                </div>
+                <div style="position: relative;left: 100px">
+                    <input type="checkbox" id="checkbox_a7" class="chk_1">
+                    <label style="width: 20px;height: 20px;margin-top: 4px" for="checkbox_a7"></label>
+                    <span style="float: left;text-indent: 0.5em">厨房</span>
+                </div>
+                <div style="position: relative;left: 200px">
+                    <input type="checkbox" id="checkbox_a8" class="chk_1">
+                    <label style="width: 20px;height: 20px;margin-top: 4px" for="checkbox_a8"></label>
+                    <span style="float: left;text-indent: 0.5em">卫生间</span>
+                </div>
+                <div style="position: relative;left: 280px">
+                    <input type="checkbox" id="checkbox_a9" class="chk_1">
+                    <label style="width: 20px;height: 20px;margin-top: 4px" for="checkbox_a9"></label>
+                    <span style="float: left;text-indent: 0.5em">卧室</span>
+                </div>
+                <div style="position: relative;left: 380px">
+                    <input type="checkbox" id="checkbox_a10" class="chk_1">
+                    <label style="width: 20px;height: 20px;margin-top: 4px" for="checkbox_a10"></label>
+                    <span style="float: left;text-indent: 0.5em">餐厅</span>
+                </div>
+				-->
+				
+            </div>
+            <div class="messlist">
+                <label>姓名</label>
+                <div class="kao">
+                    <input class="stext" type='text' name="Name"  placeholder="请输入您的名字" id="Name" value="" />
+                    <span class="tipinfo"></span>
+                </div>
+                <div class="clears"></div>
+            </div>
+            <div class="messlist">
+                <label>电话</label>
+                <div class="kao">
+                    <input class="stext" type='text' name="sms"placeholder="请输入您的姓名 请输入您的电话，我们会将石全石美的激活码发送至您的手机" id="sms" value="" />
+                    <span class="tipinfo"></span>
+                </div>
+                <div class="clears"></div>
+            </div>
+            <div class="messlist">
+                <label>公司</label>
+                <div class="kao">
+                    <input class="stext" type='text' name="corpName"  placeholder="请输入您的公司名称，便于对贵公司的售后服务" id="corpName" value="" />
+                    <span class="tipinfo"></span>
+                </div>
+                <div class="clears"></div>
+            </div>
+            <div class="messlist">
+                <label>地址</label>
+                <div class="kao">
+                    <input class="stext" type='text' name="address"  placeholder="请输入您的公司地址，便于对贵公司的售后服务" id="address" value="">
+                    <span class="tipinfo"></span>
+                </div>
+                <div class="clears"></div>
+            </div>
+            <div class="messlist">
+                <label>金额</label>
+                <span id="money"></span>
+                <div class="clears"></div>
+            </div>
+            <div class="messsub">
+                <input onclick="login()" id="aa"  type="button"  value="确认信息并支付"/>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+<footer id="footer">
+    <div class="container-fluid b-navbox clearfix" style="height: 280px">
+        <div class="row">
+            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+            <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10">
+                <ul class="fl b-nav">
+                    <li>
+                        <p><a href="#">产品商城</a></p>
+                        <a href="#">石全石美</a>
+                        <a href="#">蜜蜂软件</a>
+                    </li>
+                    <li>
+                        <p><a href="#">招商加盟</a></p>
+                        <a href="#">加盟介绍</a>
+                        <a href="#">加盟政策</a>
+                        <a href="#">申请表</a>
+                    </li>
+                    <li>
+                        <p><a href="#">客户帮助</a></p>
+                        <a href="#">软件说明</a>
+                        <a href="#">操作视频教学</a>
+                        <a href="#">常见问题</a>
+                        <a href="#">意见反馈</a>
+                    </li>
+                    <li>
+                        <p><a href="#">服务网点</a></p>
+                        <a href="#">服务网点</a>
+                        <a href="#">经销商查询</a>
+                    </li>
+                    <li>
+                        <p><a href="#">关于我们</a></p>
+                        <a href="#">企业介绍</a>
+                        <a href="#">团队介绍</a>
+                        <a href="#">合作客户</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="fr rmw">
+                    <div class="cord">
+                        <ul>
+                            <li><img style="width: 90px;height: 90px;" src="__ROOT__/Public/Web/contact/images/Y_5.png" alt=""/></li>
+                            <li>关注天材咨询</li>
+                        </ul>
+
+                    </div>
+                    <div class="cord">
+                        <ul>
+                            <li><img style="width: 90px;height: 90px;" src="__ROOT__/Public/Web/contact/images/Y_6.png" alt=""/></li>
+                            <li>关注蜜蜂科技</li>
+                        </ul>
+                        <div style="width: 230px;">
+                            <p>成都.高新区福年广场.T1-1808<br>+028-83530603</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copy" style="height: 120px">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <div class="fl">
+                        <hr>
+                        Copyringht@2013 Bee Inc.保留所有权利     蜀ICP备11018551号-3
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+<script type="text/javascript" src="__ROOT__/Public/Web/contact/js/TouchSlide.1.1.js" ></script>
+<script src="__ROOT__/Public/Web/contact/js/bootstrap.min.js"></script>
+<script src="__ROOT__/Public/Web/contact/js/hallooou.js"></script>
+<script src="__ROOT__/Public/Web/contact/js/jquery.smoove.js"></script>
+<script>
+    $('.block').smoove({offset:'40%'});
+</script>
+</html>
